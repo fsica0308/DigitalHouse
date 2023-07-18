@@ -58,6 +58,16 @@ let concesionaria = {
     },
     autosQuePuedeComprar: function(persona){
         let autosVenta = this.autosParaLaVenta()
+        let posiblesAutos = autosVenta.filter((car) => this.puedeComprar(car, persona))
+        return posiblesAutos
+    }
+};
+
+console.log(concesionaria.autosQuePuedeComprar(personas[0]));
+
+/*
+    autosQuePuedeComprar: function(persona){
+        let autosVenta = this.autosParaLaVenta()
         let posiblesAutos = []
         for (let i = 0; i < autosVenta.length; i++) {
             let puede = this.puedeComprar(autosVenta[i], persona)
@@ -65,14 +75,6 @@ let concesionaria = {
                 posiblesAutos.push(autosVenta[i])
             }
         }
-    }/*
-    autosQuePuedeComprar: function(persona){
-        let autosVenta = this.autosParaLaVenta()
-        let posiblesAutos = this.autosVenta.filter(function(venta){
-            return venta.this.puedeComprar(autosVenta, persona)
-        })
         return posiblesAutos
-    }*/
-};
-
-console.log(concesionaria.autosQuePuedeComprar(personas[0]));
+    }
+*/
