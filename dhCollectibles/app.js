@@ -1,0 +1,1 @@
+const figuras = require('./collectibles.js');
